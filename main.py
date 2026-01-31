@@ -1,35 +1,116 @@
-import os
-import subprocess
-import platform
 from app.gui import SearchBar
+from VectorStore import index, model
+from tools import tools, System
+from ollama import chat
+import json
 
-WHITELIST = ["notepad", "chrome", "calc", "spotify", "microsoft Edge"]
 
-def launch_application(app_name: str):
-    current_os = platform.system()
 
-    if app_name.lower() in WHITELIST:
 
-        try:
-            if current_os == 'Windows':
-                subprocess.Popen(["start", app_name], shell=True)
-            elif current_os == 'Darwin':
-                subprocess.Popen(["open", "-a", app_name])
-            else:
-                subprocess.Popen(["xdg-open", app_name])
 
-            return f"Successfully sent launch command for {app_name}."
-        except Exception as e:
-            return f"Failed to open {app_name}. Error {str(e)}"
-    else:
-        return f"Permission Denied: That application is not on the approved list."
+# Helper function
+def parse_tool_call(text):
+    try:
+        data = json.loads(text)
+        if "tool" in data and "arguments" in data:
+            return data
+    except:
+        return None
 
 
 
 def main():
-    app = SearchBar()
-    app.run()
-    # launch_application("calc")
+    # app = SearchBar()
+    # app.run()
+
+
+    print("Connected to ollama\n")
+    while True:
+
+        try:
+            user_input = str(input("Enter Prompt:"))
+
+            query_embedding = model.encode(
+                [user_input], normalize_embeddings=True
+            )
+
+            scores, indices = index.search(query_embedding, k=5)
+
+            candidate_tools = [tools[i] for i in indices[0]]
+
+            tool_text = "\n".join([
+                f"""name: {t.name}
+                    description: {t.description}
+                    arguments: {t.args}"""
+                for t in candidate_tools
+            ])
+
+            system_prompt = f"""
+                       You are an automation agent. 
+
+                        You may ONLY use the tools listed below. 
+                        If no tool is appropriate, respond normally. 
+                       
+                       if you aren't using a tool, respond to user request appropriately. 
+                       If you use a tool, respond ONLY in JSON using the below given JSON schema: 
+
+                       {{ 
+                            "tool": "<tool_name>",
+                            "arguments": {{ ... }} 
+                         }}
+
+                        AVAILABLE TOOLS:
+                            {tool_text}
+                    """
+            
+            print(system_prompt)
+           
+            
+
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_input}
+            ] 
+
+            response = chat(model="qwen2.5:3b", messages = messages)
+
+            data = parse_tool_call(response["message"]["content"])
+
+            if data is None:
+                print(response["message"]["content"])
+                continue
+            
+
+
+            tool = None
+            for x in candidate_tools:
+                if x.name == data["tool"]:
+                    tool = x
+                    break
+
+            if tool is None:
+                print("Tool not found in candidate tools")
+                continue
+            else:
+                try:
+                    args = data.get("arguments")
+
+                    if args is None:
+                        args = {}
+
+                    if not isinstance(args, dict):
+                        raise ValueError("Arguments must be dictionary")
+
+                    # print(data)
+                    result = tool.func(**args)
+                except Exception as e:
+                    print("Tool error:", e)
+
+        except KeyboardInterrupt:
+            print("\nExiting Program...")
+            return 
+        
+        
 
 
 
