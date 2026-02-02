@@ -1,0 +1,13 @@
+[project]
+name = "personal_ai_os"
+version = "0.1.0"
+dependencies = [
+    "faiss-cpu",
+    "sentence-transformers",
+    "numpy"
+]
+
+[project.scripts]
+vectorstore = "src.Store.VectorStore:main"
+
+

@@ -84,4 +84,5 @@ When run locally on intel i5 13th gen, with 6 cores
 7.  > Different ways to run model locally and requirements: https://skywork.ai/blog/llm/ollama-windows-guide-install-run-local-ai-on-pc/?utm_source=chatgpt.com#method-2-wsl2-advanced
 8.  > Ollama Docs: https://docs.ollama.com/faq#how-can-i-view-the-logs
 9.  > Role of vector store in memory: https://www.freecodecamp.org/news/how-ai-agents-remember-things-vector-stores-in-llm-memory/
-10.
+10. > Sentence_transformers quickstart guide: https://www.sbert.net/docs/quickstart.html
+11. > Faiss vector databases: https://www.geeksforgeeks.org/data-science/what-is-faiss/
