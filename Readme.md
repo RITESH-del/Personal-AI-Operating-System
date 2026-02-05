@@ -2,6 +2,16 @@
 
 It's a fun learning project to learn about LangChain, LangGraph and MCP Servers. And Enhance my skill/proficiency in python.
 
+## Important commands
+
+```py
+# run vectorstore to add tools
+python -m src.Store.VectorStore
+
+# run model
+python -m src
+```
+
 ## Technologies used:
 
 1. **MCP Server:** it create a standard way for the models to interact with servers that hold real-world data or perform useful tasks.
