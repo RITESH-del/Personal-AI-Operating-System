@@ -1,6 +1,5 @@
-from .System import System
-from .Browser import BrowserTool
+from .Shortcut import ShortcutTool
 from .tools import Tool, tools
 
 
-__all__ = ["System","BrowserTool", "Tool", "tools"]
+__all__ = [ "ShortcutTool", "Tool", "tools"]

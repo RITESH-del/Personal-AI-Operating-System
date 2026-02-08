@@ -1,0 +1,156 @@
+[
+  {
+    "text": "copy selected text duplicate clipboard content",
+    "rag": "copy duplicate clipboard text content file",
+    "hotkey": "ctrl+c"
+  },
+  {
+    "text": "paste clipboard content insert text",
+    "rag": "paste clipboard insert content text",
+    "hotkey": "ctrl+v"
+  },
+  {
+    "text": "cut selected text remove clipboard",
+    "rag": "cut remove clipboard text content",
+    "hotkey": "ctrl+x"
+  },
+  {
+    "text": "undo last action revert change",
+    "rag": "undo revert change action",
+    "hotkey": "ctrl+z"
+  },
+  {
+    "text": "redo last action forward change",
+    "rag": "redo forward change action",
+    "hotkey": "ctrl+y"
+  },
+  {
+    "text": "select all items highlight everything",
+    "rag": "select all highlight everything items",
+    "hotkey": "ctrl+a"
+  },
+  {
+    "text": "save file document project data",
+    "rag": "save file document project",
+    "hotkey": "ctrl+s"
+  },
+  {
+    "text": "find search text page word",
+    "rag": "find search text word page",
+    "hotkey": "ctrl+f"
+  },
+  {
+    "text": "replace change text word",
+    "rag": "replace change text word",
+    "hotkey": "ctrl+h"
+  },
+
+  {
+    "text": "open run dialog execute command system tool",
+    "rag": "run dialog execute command system tool",
+    "hotkey": "win+r"
+  },
+  {
+    "text": "open windows settings control panel configuration",
+    "rag": "windows settings control panel configuration",
+    "hotkey": "win+i"
+  },
+  {
+    "text": "lock computer screen session security",
+    "rag": "lock computer screen session security",
+    "hotkey": "win+l"
+  },
+  {
+    "text": "show desktop minimize windows home screen",
+    "rag": "show desktop minimize windows",
+    "hotkey": "win+d"
+  },
+  {
+    "text": "open windows start menu search applications programs internet",
+    "rag": "windows start menu search applications internet programs open edge chrome notepad calculator cmd",
+    "hotkey": "win+s"
+  },
+  {
+    "text": "show emoji panel symbols keyboard",
+    "rag": "emoji panel symbols keyboard",
+    "hotkey": "win+."
+  },
+  {
+    "text": "show clipboard history copied items",
+    "rag": "clipboard history copied items",
+    "hotkey": "win+v"
+  },
+  {
+    "text": "take screenshot snip capture screen image",
+    "rag": "screenshot snip capture screen image",
+    "hotkey": "win+shift+s"
+  },
+  {
+    "text": "open task manager cpu memory processes monitor",
+    "rag": "task manager cpu memory processes monitor",
+    "hotkey": "ctrl+shift+esc"
+  },
+
+  {
+    "text": "switch applications change window multitask alt tab",
+    "rag": "switch applications change window multitask",
+    "hotkey": "alt+tab"
+  },
+  {
+    "text": "close active window exit application",
+    "rag": "close active window exit application",
+    "hotkey": "alt+f4"
+  },
+  {
+    "text": "rename selected file change filename",
+    "rag": "rename selected file change filename",
+    "hotkey": "f2"
+  },
+  {
+    "text": "delete selected file remove trash erase",
+    "rag": "delete selected file remove trash erase",
+    "hotkey": "delete"
+  },
+
+  {
+    "text": "open new browser tab web internet page",
+    "rag": "open new browser tab internet page",
+    "hotkey": "ctrl+t"
+  },
+  {
+    "text": "close browser tab webpage",
+    "rag": "close browser tab webpage",
+    "hotkey": "ctrl+w"
+  },
+  {
+    "text": "reopen closed browser tab restore webpage",
+    "rag": "reopen closed browser tab restore webpage",
+    "hotkey": "ctrl+shift+t"
+  },
+  {
+    "text": "refresh reload webpage internet",
+    "rag": "refresh reload webpage internet",
+    "hotkey": "f5"
+  },
+  {
+    "text": "open browser developer tools inspect debug",
+    "rag": "browser developer tools inspect debug",
+    "hotkey": "f12"
+  },
+
+  {
+    "text": "open vscode command palette commands menu",
+    "rag": "vscode command palette commands menu",
+    "hotkey": "ctrl+shift+p"
+  },
+  {
+    "text": "open vscode terminal console shell",
+    "rag": "vscode terminal console shell",
+    "hotkey": "ctrl+`"
+  },
+  {
+    "text": "format code vscode document beautify",
+    "rag": "format code vscode document beautify",
+    "hotkey": "shift+alt+f"
+  }
+]
